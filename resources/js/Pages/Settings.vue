@@ -1,18 +1,18 @@
 <script>
 import { Link } from '@inertiajs/vue3';
-import Nav from '@/Shared/Nav.vue';
+import Layout from '@/Shared/Layout.vue';
 
 export default {
     components: {
         Link,
-        Nav
+        Layout
     }
 }
 </script>
 
 <template>
-    <div>
+    <Layout>
         <h1 class="text-center"><strong>Settings</strong></h1>
-        <Nav />
-    </div>
+    </Layout>
+
 </template>
