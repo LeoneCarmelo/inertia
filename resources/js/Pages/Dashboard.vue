@@ -9,6 +9,7 @@ export default{
     },
     props: {
         name: String,
+        frameworks: Array
     },
     data(){
         return {
@@ -32,6 +33,9 @@ export default{
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">You're logged in! {{ name }}</div>
+                    <ul v-if="frameworks">
+                        <li v-for="framework in frameworks" v-text="framework"></li>
+                    </ul>
                 </div>
             </div>
         </div>
