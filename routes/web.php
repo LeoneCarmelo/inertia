@@ -25,19 +25,24 @@ Route::get('/', function () {
     ]);
 });
 
+Route::post('/esempio', function () {
+    $foo = request('foo');
+    dd($foo);
+});
+
 Route::get('/dashboard', function () {
-    return Inertia::render( 'Dashboard', [
+    return Inertia::render('Dashboard', [
         'name' => 'Carmelo Leone',
         'frameworks' => ['laravel', 'vue', 'inertia']
     ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/users', function () {
-    return Inertia::render( 'Users');
+    return Inertia::render('Users');
 });
 
 Route::get('/settings', function () {
-    return Inertia::render( 'Settings');
+    return Inertia::render('Settings');
 });
 
 
