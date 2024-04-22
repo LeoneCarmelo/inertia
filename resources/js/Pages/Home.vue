@@ -3,9 +3,9 @@ import { Head } from '@inertiajs/vue3';
 import Layout from '@/Shared/Layout.vue';
 
 export default {
+    layout: Layout,
     components: {
         Head,
-        Layout
     },
     props: {
         canLogin: Boolean,
@@ -24,6 +24,7 @@ export default {
 
 <template>
     <Layout>
+
         <Head title="Welcome" />
 
         <div>
@@ -45,5 +46,7 @@ export default {
         </div>
 
         <h1>Home</h1>
+
+
     </Layout>
 </template>
