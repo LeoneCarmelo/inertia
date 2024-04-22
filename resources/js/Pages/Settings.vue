@@ -1,10 +1,8 @@
 <script>
-import { Link } from '@inertiajs/vue3';
 import Layout from '@/Shared/Layout.vue';
 
 export default {
     components: {
-        Link,
         Layout
     }
 }
