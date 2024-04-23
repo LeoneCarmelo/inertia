@@ -12,7 +12,6 @@ export default {
         <h1 class="fw-bold text-light">Inertia app</h1>
         <Nav />
     </header>
-    <input type="text" value="My app">
     <!-- Main content -->
     <section class="p-3">
          <slot />

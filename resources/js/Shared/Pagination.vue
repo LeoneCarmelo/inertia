@@ -3,7 +3,7 @@ export default {
     name: 'Pagination',
     props: {
         links: Array,
-        currentPage: String
+        currentPage: Number
     }
 }
 </script>

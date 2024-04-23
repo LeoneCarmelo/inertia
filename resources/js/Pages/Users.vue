@@ -4,14 +4,10 @@ import Pagination from '@/Shared/Pagination.vue'
 export default {
     layout: Layout,
     props: {
-        time: String,
         users: Object
     },
-    components:{
+    components: {
         Pagination
-    },
-    mounted() {
-        //console.log(users)
     }
 }
 
@@ -22,10 +18,6 @@ export default {
     <Head title="Users" />
 
     <h1 class="text-center fw-bold fs-1">Users</h1>
-
-    <div>
-        <p>The current time is {{ time }}.</p>
-    </div>
 
     <div class="list users">
         <div class="table-responsive w-50 mx-auto">
@@ -41,18 +33,9 @@ export default {
             </table>
 
         </div>
-        
+
     </div>
-    <!-- Paginator -->
-<!--     <div class="d-flex justify-content-center gap-2">
-        <template v-for="link in users.links">
-            <Link v-if="link.url" :href="link.url" v-html="link.label" :class="users.current_page == link.label ? '' : 'text-secondary'" preserve-scroll/>
-        </template>
-    </div> -->
-<Pagination :links="users.links" :currentPage="users.current_page"/>
 
-
-
-    <Link href="/users" class="text-success position-absolute" style="bottom:-20px;" preserve-scroll>Refresh</Link>
+    <Pagination :links="users.links" :currentPage="users.current_page" />
 
 </template>
