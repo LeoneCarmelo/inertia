@@ -29,7 +29,7 @@ Route::get('/', function () {
 Route::post('/esempio', function () {
     $foo = request('foo');
 
-    dd(now());
+    dd($foo);
 });
 
 Route::get('/dashboard', function () {
@@ -40,12 +40,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/users', function () {
+    $users =  User::select('id', 'name')->paginate(10);
     return Inertia::render('Users', [
-        'time' => now()->toTimeString(),
-        'users' => User::all()->map(fn($user) => [
-            'id' => $user->id,
-            'name' => $user->name
-        ])
+        'users' => $users
     ]);
 });
 

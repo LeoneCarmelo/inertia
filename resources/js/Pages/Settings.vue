@@ -7,8 +7,8 @@ layout: Layout,
 
 <template>
     <Head title="Settings"/>
-    <Layout>
+
         <h1 class="text-center fs-1"><strong>Settings</strong></h1>
-    </Layout>
+
 
 </template>
