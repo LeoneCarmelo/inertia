@@ -14,6 +14,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create(['name' => 'admin', 'email' => 'admin@inertia.com', 'password' => Hash::make('demo')]);
+        
+        //User::create(['name' => 'admin', 'email' => 'admin@inertia.com', 'password' => Hash::make('demo')]);
     }
 }

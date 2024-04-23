@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\User;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -27,7 +28,8 @@ Route::get('/', function () {
 
 Route::post('/esempio', function () {
     $foo = request('foo');
-    dd($foo);
+
+    dd(now());
 });
 
 Route::get('/dashboard', function () {
@@ -39,7 +41,11 @@ Route::get('/dashboard', function () {
 
 Route::get('/users', function () {
     return Inertia::render('Users', [
-        'time' => now()->toTimeString()
+        'time' => now()->toTimeString(),
+        'users' => User::all()->map(fn($user) => [
+            'id' => $user->id,
+            'name' => $user->name
+        ])
     ]);
 });
 

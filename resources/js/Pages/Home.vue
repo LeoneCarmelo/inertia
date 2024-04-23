@@ -1,12 +1,8 @@
 <script>
-import { Head } from '@inertiajs/vue3';
 import Layout from '@/Shared/Layout.vue';
 
 export default {
     layout: Layout,
-    components: {
-        Head,
-    },
     props: {
         canLogin: Boolean,
         canRegister: Boolean,
@@ -25,7 +21,7 @@ export default {
 <template>
     <Layout>
 
-        <Head title="Welcome" />
+        <Head title="Home" />
 
         <div>
             <div v-if="canLogin" class="">
@@ -45,7 +41,7 @@ export default {
             </div>
         </div>
 
-        <h1>Home</h1>
+        <h1 class="fs-1">Home</h1>
 
 
     </Layout>

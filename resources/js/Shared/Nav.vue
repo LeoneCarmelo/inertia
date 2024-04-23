@@ -13,7 +13,7 @@ export default {
                 Home</Link>
             </li>
             <li>
-                <Link href="/users?foo=bar" class="text-info"
+                <Link href="/users" class="text-info"
                     :class="{ 'text-decoration-underline fw-bold': $page.component === 'Users' }">Users</Link>
             </li>
             <li>
