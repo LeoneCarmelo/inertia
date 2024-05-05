@@ -62,21 +62,17 @@ Route::get('/users/create', function () {
 });
 
 Route::post('users', function () {
-    $val_data = Validator::make(request('form'), [
+
+    $validata = request()->validate([
         'name' => 'required',
         'email' => 'required|email',
         'password' => 'required|min:8'
     ]);
 
-    if ($val_data->fails()) {
-        return redirect()->back()->withErrors($val_data->errors()->getMessages());
-    }
-
-    //create user
     $user = User::create([
-        'name' => request('form.name'),
-        'email' => request('form.email'),
-        'password' => bcrypt(request('form.password')),
+        'name' => $validata['name'],
+        'email' => $validata['email'],
+        'password' => bcrypt($validata['password']),
     ]);
 
     //redirect
